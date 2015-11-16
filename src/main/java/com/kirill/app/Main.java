@@ -3,6 +3,8 @@ package com.kirill.app;
 import com.kirill.app.models.Animals;
 import com.kirill.app.repository.AnimalRepository;
 import com.kirill.app.repository.StorageRepositories;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,11 @@ import java.util.List;
 public class Main {
     public static void main (String[] args){
 
-        StorageRepositories sr = new StorageRepositories();
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("dataBaseConfig.xml");
+
+        StorageRepositories sr = (StorageRepositories) context.getBean("storageRepositories");
+
         System.out.println("session created");
         String type = "Cat";
         String name = "Barsik";

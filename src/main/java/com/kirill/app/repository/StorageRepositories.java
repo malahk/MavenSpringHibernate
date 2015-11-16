@@ -5,6 +5,7 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Admin
@@ -12,25 +13,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author Admin
  * @since 10.11.2015
  */
+@Component
 public class StorageRepositories {
 
     private AnimalRepository animalRepository;
 
     @Autowired
-    public StorageRepositories() {
-
-       SessionFactory sessionFactory;
-
-        try {
-//             Create the SessionFactory from hibernate.cfg.xml
-            sessionFactory = new Configuration().configure().buildSessionFactory();
-
-        } catch (Throwable ex) {
-            // Make sure you log the exception, as it might be swallowed
-            System.err.println("Initial SessionFactory creation failed." + ex);
-            throw new ExceptionInInitializerError(ex);
-        }
-
+    public StorageRepositories(SessionFactory sessionFactory) {
         this.animalRepository = new AnimalRepository(sessionFactory);
 
     }
