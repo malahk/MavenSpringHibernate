@@ -11,22 +11,22 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>src/main/resources/springApplicationContext.xml</param-value>
+            <param-value>WEB-INF/mvc-dispatcher-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <context-param>
+<!--    <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            src/main/resources/springApplicationContext.xml
+            assets/mvc-dispatcher-servlet.xml
         </param-value>
     </context-param>
 
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+    </listener>-->
 
     <servlet-mapping>
         <servlet-name>mvc-dispatcher</servlet-name>
