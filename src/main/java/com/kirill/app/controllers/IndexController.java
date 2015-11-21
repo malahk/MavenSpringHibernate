@@ -6,7 +6,12 @@ import com.kirill.app.models.Food;
 import com.kirill.app.repository.AccessoriesRepository;
 import com.kirill.app.repository.AnimalRepository;
 import com.kirill.app.repository.FoodRepository;
+import com.kirill.app.repository.StorageRepositories;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,12 +28,14 @@ import java.util.List;
 @Controller
 public class IndexController {
 
-    @Autowired
-    private AnimalRepository animalRepository;
-    @Autowired
-    private FoodRepository foodRepository;
-    @Autowired
-    private AccessoriesRepository accessoriesRepository;
+    ApplicationContext context =
+            new ClassPathXmlApplicationContext("dataBaseConfig.xml");
+    SessionFactory sf = (SessionFactory) context.getBean("sessionFactory");
+    StorageRepositories sr = (StorageRepositories) context.getBean("storageRepositories");
+
+    FoodRepository foodRepository = sr.getFoodRepository();
+    AnimalRepository animalRepository = sr.getAnimalRepository();
+    AccessoriesRepository accessoriesRepository = sr.getAccessoriesRepository();
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView allProductsList() {

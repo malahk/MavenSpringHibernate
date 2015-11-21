@@ -9,39 +9,45 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-    <import resource="classpath:dataBaseConfig.xml"/>
+<!--    <import resource="classpath:dataBaseConfig.xml"/>
 
-    <bean id="session" class="com.kirill.app.repository.StorageRepositories">
+    <bean id="storageRepo" class="com.kirill.app.repository.StorageRepositories">
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
-    <bean id="animal" class="com.kirill.app.repository.AnimalRepository">
+    <bean id="animalRepo" class="com.kirill.app.repository.AnimalRepository">
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
-    <bean id="food" class="com.kirill.app.repository.FoodRepository">
+    <bean id="foodRepo" class="com.kirill.app.repository.FoodRepository">
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
-    <bean id="accs" class="com.kirill.app.repository.AccessoriesRepository">
+    <bean id="accsRepo" class="com.kirill.app.repository.AccessoriesRepository">
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
-    <bean id="role" class="com.kirill.app.repository.RoleRepository">
+    <bean id="roleRepo" class="com.kirill.app.repository.RoleRepository">
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
-    <bean id="user" class="com.kirill.app.repository.UserRepository">
+    <bean id="userRepo" class="com.kirill.app.repository.UserRepository">
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
-    <bean id="address" class="com.kirill.app.repository.AddressRepository">
+    <bean id="addressRepo" class="com.kirill.app.repository.AddressRepository">
         <constructor-arg ref="sessionFactory"/>
-    </bean>
+    </bean>-->
 
     <context:component-scan base-package="com.kirill.app"/>
 
        <mvc:annotation-driven/>
+
+        <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+            <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+            <property name="prefix" value="/WEB-INF/jsp/" />
+            <property name="suffix" value=".jsp" />
+    </bean>
 
        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
               <property name="prefix" value="/WEB-INF/jsp/" />

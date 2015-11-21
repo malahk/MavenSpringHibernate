@@ -2,6 +2,7 @@ package com.kirill.app;
 
 import com.kirill.app.models.*;
 import com.kirill.app.repository.*;
+import org.hibernate.SessionFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -22,6 +23,8 @@ public class Main {
                 new ClassPathXmlApplicationContext("dataBaseConfig.xml");
 
         StorageRepositories sr = (StorageRepositories) context.getBean("storageRepositories");
+        SessionFactory sf = (SessionFactory) context.getBean("sessionFactory");
+        System.out.println(sf.isClosed());
 
         FoodRepository foodRepository = sr.getFoodRepository();
         AnimalRepository animalRepository = sr.getAnimalRepository();
@@ -80,7 +83,7 @@ public class Main {
         System.out.println("all accs displayed");
         */
 
-        System.out.println("User session is created");
+/*        System.out.println("User session is created");
         String firstName = "kirill";
         String lastName = "malah";
         String login = "test5";
@@ -107,20 +110,15 @@ public class Main {
         roleRepository.create(role);
         addressRepository.create(address);
         userRepository.create(user);
-        System.out.println("user created");
+        System.out.println("user created");*/
         List<User> allUsersList = new ArrayList<User>(userRepository.getAll());
         System.out.println(allUsersList);
         System.out.println("all users displayed");
-        List<User> userGetByLogin = new ArrayList<User>(userRepository.getByLogin(user));
-        System.out.println("user getted by login");
+/*        List<User> userGetByLogin = new ArrayList<User>(userRepository.getByLogin(user));
+        System.out.println("user getted by login");*/
 /*        List<User> userGetById = new ArrayList<User>(userRepository.getById(user));
         System.out.println(userGetById);
         System.out.println("getById displayed");*/
-
-
-
-
-
 
     }
 }
