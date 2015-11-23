@@ -16,7 +16,7 @@ import java.util.List;
  * @author Admin
  * @since 17.11.2015
  */
-@Component
+//@Component
 @Repository
 public class AccessoriesRepository {
 
@@ -26,6 +26,17 @@ public class AccessoriesRepository {
     public AccessoriesRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+/*
+    //for Java config build
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    public AccessoriesRepository() {
+    }
+
+    public AccessoriesRepository(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }*/
 
     @Transactional
     public void create (Accessories accessorie){

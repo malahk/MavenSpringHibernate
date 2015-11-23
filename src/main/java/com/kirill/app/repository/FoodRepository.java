@@ -17,7 +17,7 @@ import java.util.List;
  * @author Admin
  * @since 17.11.2015
  */
-@Component
+//@Component
 @Repository
 public class FoodRepository {
 
@@ -27,6 +27,17 @@ public class FoodRepository {
     public FoodRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+/*
+    //for Java config build
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    public FoodRepository() {
+    }
+
+    public FoodRepository(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }*/
 
     @Transactional
     public void create (Food food){
@@ -64,7 +75,6 @@ public class FoodRepository {
         session.beginTransaction();
         Query query = session.createQuery("FROM Food F WHERE F.title LIKE  :name").setString("name", itemName);
         session.getTransaction().commit();
-        List result = query.list();
-        return result;
+        return query.list();
     }
 }

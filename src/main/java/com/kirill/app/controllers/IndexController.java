@@ -3,15 +3,8 @@ package com.kirill.app.controllers;
 import com.kirill.app.models.Accessories;
 import com.kirill.app.models.Animals;
 import com.kirill.app.models.Food;
-import com.kirill.app.repository.AccessoriesRepository;
-import com.kirill.app.repository.AnimalRepository;
-import com.kirill.app.repository.FoodRepository;
 import com.kirill.app.repository.StorageRepositories;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,20 +21,14 @@ import java.util.List;
 @Controller
 public class IndexController {
 
-    ApplicationContext context =
-            new ClassPathXmlApplicationContext("dataBaseConfig.xml");
-    SessionFactory sf = (SessionFactory) context.getBean("sessionFactory");
-    StorageRepositories sr = (StorageRepositories) context.getBean("storageRepositories");
-
-    FoodRepository foodRepository = sr.getFoodRepository();
-    AnimalRepository animalRepository = sr.getAnimalRepository();
-    AccessoriesRepository accessoriesRepository = sr.getAccessoriesRepository();
+    @Autowired
+    private StorageRepositories sr;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView allProductsList() {
-        List<Animals> animalsList = this.animalRepository.getAll();
-        List<Food> foodList = this.foodRepository.getAll();
-        List<Accessories> accsList = this.accessoriesRepository.getAll();
+        List<Animals> animalsList = sr.getAnimalRepository().getAll();
+        List<Food> foodList = sr.getFoodRepository().getAll();
+        List<Accessories> accsList = sr.getAccessoriesRepository().getAll();
         ModelAndView mav = new ModelAndView("index");
         mav.addObject(animalsList);
         mav.addObject(accsList);

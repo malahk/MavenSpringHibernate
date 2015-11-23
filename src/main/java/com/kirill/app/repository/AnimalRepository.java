@@ -16,7 +16,7 @@ import java.util.List;
  * @author Admin
  * @since 10.11.2015
  */
-@Component
+//@Component
 @Repository
 public class AnimalRepository {
 
@@ -26,6 +26,17 @@ public class AnimalRepository {
     public AnimalRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+/*
+    //for Java config build
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    public AnimalRepository() {
+    }
+
+    public AnimalRepository(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }*/
 
     @Transactional
     public void create (Animals animal){

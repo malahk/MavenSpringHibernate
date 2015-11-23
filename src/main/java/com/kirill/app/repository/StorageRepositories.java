@@ -31,9 +31,7 @@ public class StorageRepositories {
         this.roleRepository = new RoleRepository(sessionFactory);
     }
 
-    public AnimalRepository getAnimalRepository() {
-        return animalRepository;
-    }
+    public AnimalRepository getAnimalRepository() { return animalRepository; }
     public FoodRepository getFoodRepository() { return foodRepository; }
     public AccessoriesRepository getAccessoriesRepository() { return accessoriesRepository; }
     public UserRepository getUserRepository() { return userRepository; }

@@ -19,7 +19,7 @@ import java.util.List;
 public class Main {
     public static void main (String[] args){
 
-        ApplicationContext context =
+/*        ApplicationContext context =
                 new ClassPathXmlApplicationContext("dataBaseConfig.xml");
 
         StorageRepositories sr = (StorageRepositories) context.getBean("storageRepositories");
@@ -31,7 +31,7 @@ public class Main {
         AccessoriesRepository accessoriesRepository = sr.getAccessoriesRepository();
         AddressRepository addressRepository = sr.getAddressRepository();
         UserRepository userRepository = sr.getUserRepository();
-        RoleRepository roleRepository = sr.getRoleRepository();
+        RoleRepository roleRepository = sr.getRoleRepository();*/
 
         /*
         System.out.println("Animal session is created");
@@ -111,9 +111,9 @@ public class Main {
         addressRepository.create(address);
         userRepository.create(user);
         System.out.println("user created");*/
-        List<User> allUsersList = new ArrayList<User>(userRepository.getAll());
+/*        List<User> allUsersList = new ArrayList<User>(userRepository.getAll());
         System.out.println(allUsersList);
-        System.out.println("all users displayed");
+        System.out.println("all users displayed");*/
 /*        List<User> userGetByLogin = new ArrayList<User>(userRepository.getByLogin(user));
         System.out.println("user getted by login");*/
 /*        List<User> userGetById = new ArrayList<User>(userRepository.getById(user));
