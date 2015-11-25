@@ -1,3 +1,4 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -25,7 +26,7 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <!--<prop key="hibernate.hbm2ddl.auto">update</prop>-->
+                &lt;!&ndash;<prop key="hibernate.hbm2ddl.auto">update</prop>&ndash;&gt;
                 <prop key="hibernate.hbm2ddl.auto">validate</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
@@ -39,3 +40,4 @@
     </bean>
 
 </beans>
+-->
