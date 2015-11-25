@@ -1,3 +1,4 @@
+<!--
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,7 +10,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-<!--    <import resource="classpath:dataBaseConfig.xml"/>
+&lt;!&ndash;    <import resource="classpath:dataBaseConfig.xml"/>
 
     <bean id="storageRepo" class="com.kirill.app.repository.StorageRepositories">
         <constructor-arg ref="sessionFactory"/>
@@ -37,7 +38,7 @@
 
     <bean id="addressRepo" class="com.kirill.app.repository.AddressRepository">
         <constructor-arg ref="sessionFactory"/>
-    </bean>-->
+    </bean>&ndash;&gt;
 
     <context:component-scan base-package="com.kirill.app"/>
 
@@ -55,3 +56,4 @@
        </bean>
 
 </beans>
+-->

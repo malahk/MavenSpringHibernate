@@ -1,3 +1,4 @@
+/*
 package com.kirill.app.repository;
 
 import com.kirill.app.models.Address;
@@ -7,12 +8,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+*/
 /**
  * Created by Admin
  *
  * @author Admin
  * @since 10.11.2015
- */
+ *//*
+
 @Component
 public class StorageRepositories {
 
@@ -40,3 +43,4 @@ public class StorageRepositories {
     public AddressRepository getAddressRepository() { return addressRepository; }
     public RoleRepository getRoleRepository() { return roleRepository; }
 }
+*/

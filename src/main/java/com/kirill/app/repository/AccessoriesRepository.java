@@ -19,14 +19,13 @@ import java.util.List;
 //@Component
 @Repository
 public class AccessoriesRepository {
-
+/*
     private final SessionFactory sessionFactory;
 
     @Autowired
     public AccessoriesRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
-    }
-/*
+    }*/
     //for Java config build
     @Autowired
     private SessionFactory sessionFactory;
@@ -36,7 +35,7 @@ public class AccessoriesRepository {
 
     public AccessoriesRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
-    }*/
+    }
 
     @Transactional
     public void create (Accessories accessorie){

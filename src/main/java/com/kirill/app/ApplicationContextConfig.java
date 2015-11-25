@@ -1,4 +1,3 @@
-/*
 package com.kirill.app;
 
 import com.kirill.app.models.*;
@@ -15,14 +14,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.sql.DataSource;
 import java.util.Properties;
-
-*/
-/**
+/*
+*
  * Created by Kirill Malah
  *
  * @author Kirill Malah
  * @since 21-Nov-15
- *//*
+ */
 
 @Configuration
 @ComponentScan("com.kirill.app")
@@ -68,13 +66,11 @@ public class ApplicationContextConfig {
         properties.put("hibernate.hbm2ddl.auto", "validate");
         return properties;
     }
-*/
-/*
-    @Autowired
+/*    @Autowired
     @Bean(name = "storageRepositories")
     public StorageRepositories getSorageRepo(SessionFactory sessionFactory) {
         return new StorageRepositories(sessionFactory);
-    }*//*
+    }*/
 
 
     @Autowired
@@ -101,4 +97,3 @@ public class ApplicationContextConfig {
         return new AccessoriesRepository(sessionFactory);
     }
 }
-*/

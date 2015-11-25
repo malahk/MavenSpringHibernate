@@ -19,14 +19,13 @@ import java.util.List;
 //@Component
 @Repository
 public class AnimalRepository {
-
+/*
     private final SessionFactory sessionFactory;
 
     @Autowired
     public AnimalRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
-    }
-/*
+    }*/
     //for Java config build
     @Autowired
     private SessionFactory sessionFactory;
@@ -36,7 +35,7 @@ public class AnimalRepository {
 
     public AnimalRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
-    }*/
+    }
 
     @Transactional
     public void create (Animals animal){

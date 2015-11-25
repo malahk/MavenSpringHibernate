@@ -20,14 +20,14 @@ import java.util.List;
 //@Component
 @Repository
 public class FoodRepository {
-
+/*
     private final SessionFactory sessionFactory;
 
     @Autowired
     public FoodRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-/*
+    */
     //for Java config build
     @Autowired
     private SessionFactory sessionFactory;
@@ -37,7 +37,7 @@ public class FoodRepository {
 
     public FoodRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
-    }*/
+    }
 
     @Transactional
     public void create (Food food){

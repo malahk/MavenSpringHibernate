@@ -1,13 +1,13 @@
-/*
 package com.kirill.app;
+/*
 
-*/
-/**
+*
  * Created by Kirill Malah
  *
  * @author Kirill Malah
  * @since 21-Nov-15
- *//*
+
+*/
 
 import javax.servlet.ServletRegistration;
 import javax.servlet.ServletContext;
@@ -32,4 +32,3 @@ public class SpringWebAppInitializer implements WebApplicationInitializer {
 
     }
 }
-*/
