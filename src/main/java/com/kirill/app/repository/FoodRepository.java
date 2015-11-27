@@ -5,6 +5,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,23 +21,11 @@ import java.util.List;
 //@Component
 @Repository
 public class FoodRepository {
-/*
-    private final SessionFactory sessionFactory;
-
-    @Autowired
-    public FoodRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-    */
-    //for Java config build
-    @Autowired
     private SessionFactory sessionFactory;
 
-    public FoodRepository() {
-    }
-
-    public FoodRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    @Autowired
+    public FoodRepository(LocalSessionFactoryBean sessionFactory) {
+        this.sessionFactory = sessionFactory.getObject();
     }
 
     @Transactional

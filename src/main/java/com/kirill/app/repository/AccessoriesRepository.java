@@ -4,6 +4,7 @@ import com.kirill.app.models.Accessories;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,25 +17,13 @@ import java.util.List;
  * @author Admin
  * @since 17.11.2015
  */
-//@Component
 @Repository
 public class AccessoriesRepository {
-/*
-    private final SessionFactory sessionFactory;
-
-    @Autowired
-    public AccessoriesRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }*/
-    //for Java config build
-    @Autowired
     private SessionFactory sessionFactory;
 
-    public AccessoriesRepository() {
-    }
-
-    public AccessoriesRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    @Autowired
+    public AccessoriesRepository(LocalSessionFactoryBean sessionFactory) {
+        this.sessionFactory = sessionFactory.getObject();
     }
 
     @Transactional
